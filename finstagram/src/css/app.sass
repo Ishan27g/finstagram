@@ -1,0 +1,18 @@
+// app global css in Sass form
+.text-instagram
+    font-family: 'Grand Hotel', 'roboto', 'sans-serif'
+.screen
+    max-width: 975px
+    margin: 0 auto
+.mobile-screen
+    @media (max-width: $breakpoint-xs-max)
+         display: block
+    @media (min-width: $breakpoint-sm-min)
+         display: none
+            
+.desktop-screen
+    @media (max-width: $breakpoint-xs-max)
+         display: none
+    @media (min-width: $breakpoint-sm-min)
+         display: block            
+    
