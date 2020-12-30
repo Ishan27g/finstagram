@@ -1,9 +1,10 @@
 package models
 
 type User struct {
-	Id int
+	Id uint32
 	Username string
 	Password string
-	Posts[] Post
+	Email string
+	Posts []int
 	//Value int
 }

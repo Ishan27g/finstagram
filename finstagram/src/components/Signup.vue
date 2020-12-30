@@ -55,17 +55,17 @@ export default {
           : "Password must be at least 6 characters long";
       if (!passwordError) {
         // make request to server to sign up user
-        console.log("username: ", this.username);
-        console.log("email: ", this.email);
-        console.log("password: ", this.password);
         const article = {
           username: this.username,
           email: this.email,
           password: this.password,
         };
         axios
-          .post("http://localhost:3000/api/app/signup", article)
-          .then((response) => (this.articleId = response.data.id))
+          .post("http://localhost:3000/api/signup", article)
+          .then((response) => {
+            console.log(response.data)
+            this.articleId = response.data.id;
+          })
           .catch((error) => {
             this.errorMessage = error.message;
             console.error("There was an error!", error);

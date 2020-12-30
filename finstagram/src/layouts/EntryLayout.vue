@@ -52,6 +52,9 @@ export default {
   data() {
     return {};
   },
+  beforeCreate() {
+    this.$router.push({name: 'Login'})
+  },
 };
 </script>
 

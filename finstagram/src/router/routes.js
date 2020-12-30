@@ -14,8 +14,8 @@ const routes = [
     path: '/app',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '/app/home', component: () => import('pages/HomePage.vue') },
-      { path: '/app/addImage', component: () => import('pages/AddImage.vue') },
+      { path: '/app/home/:userId', name: 'Home', component: () => import('pages/HomePage.vue') },
+      { path: '/app/addImage/:userId', name: 'AddImage', component: () => import('pages/AddImage.vue') },
     ]
   },
   {

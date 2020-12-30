@@ -32,6 +32,7 @@ export default {
     return {
       username: "",
       password: "",
+      userId: "",
     };
   },
   methods: {
@@ -43,15 +44,18 @@ export default {
           : "Password must be at least 6 characters long";
       if (!passwordError) {
         // make request to server to sign up user
-        console.log("username: ", this.username);
-        console.log("password: ", this.password);
+
         const article = {
           username: this.username,
           password: this.password,
         };
         axios
-          .post("http://localhost:3000/api/app/login", article)
-          .then((response) => (this.articleId = response.data.id))
+          .post("http://localhost:3000/api/login", article)
+          .then((response) => {
+            console.log(response.data)
+            this.userId = response.data.Response;
+            this.$router.push({path: `/app/home/${this.userId}`})
+          })
           .catch((error) => {
             this.errorMessage = error.message;
             console.error("There was an error!", error);
