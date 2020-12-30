@@ -1,4 +1,4 @@
-# finstagram (finstagram)
+# Quasar App (finstagram)
 
 Like Instagram
 

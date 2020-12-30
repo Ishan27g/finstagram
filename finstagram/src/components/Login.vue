@@ -26,7 +26,6 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
   data() {
     return {
@@ -37,6 +36,7 @@ export default {
   },
   methods: {
     handleSubmit() {
+
       // validate password
       const passwordError =
         this.password.length > 5
@@ -49,12 +49,12 @@ export default {
           username: this.username,
           password: this.password,
         };
-        axios
+        this.$axios
           .post("http://localhost:3000/api/login", article)
           .then((response) => {
-            console.log(response.data)
+            console.log(response.data);
             this.userId = response.data.Response;
-            this.$router.push({path: `/app/home/${this.userId}`})
+            this.$router.push({ path: `/app/home/${this.userId}` });
           })
           .catch((error) => {
             this.errorMessage = error.message;

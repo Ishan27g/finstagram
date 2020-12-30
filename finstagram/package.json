@@ -2,7 +2,7 @@
   "name": "finstagram",
   "version": "0.0.1",
   "description": "Like Instagram",
-  "productName": "finstagram",
+  "productName": "Quasar App",
   "author": "Ishan Goyal <ishan.goyal@student.unimelb.edu.au>",
   "private": true,
   "scripts": {

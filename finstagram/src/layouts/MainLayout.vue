@@ -1,5 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf" class="screen">
+    
     <q-header class="bg-white screen" bordered>
       <q-toolbar>
         <q-toolbar-title class="text-primary text-instagram text-bold">
@@ -11,20 +12,20 @@
           dense
           size="22px"
           color="primary"
-          icon="eva-home"
+          icon="eva-corner-right-up-outline"
           class="desktop-screen"
-          to="/home"
+          to="/"
         />
-        <q-separator vertical inset spaced class="desktop-screen"/>
+        <q-separator vertical inset spaced class="desktop-screen" />
         <q-btn
           flat
           round
           dense
           size="22px"
           color="primary"
-          icon="eva-plus-square"
+          icon="eva-log-in"
           class="desktop-screen"
-          to="/addImage"
+          to="/signup"
         />
       </q-toolbar>
     </q-header>
@@ -39,10 +40,15 @@
         active-color="primary"
         indicator-color="transparent"
       >
-        <q-route-tab name="home" icon="eva-home" to="/home" />
-        <q-route-tab name="add" icon="eva-plus-square" to="/addImage" />
+        <q-route-tab name="login" icon="eva-log-in" to="/" />
+        <q-route-tab
+          name="signup"
+          icon="eva-corner-right-up-outline"
+          to="/signup"
+        />
       </q-tabs>
     </q-footer>
+
   </q-layout>
 </template>
 

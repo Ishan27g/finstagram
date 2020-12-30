@@ -37,7 +37,6 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
   data() {
     return {
@@ -60,7 +59,7 @@ export default {
           email: this.email,
           password: this.password,
         };
-        axios
+        this.$axios
           .post("http://localhost:3000/api/signup", article)
           .then((response) => {
             console.log(response.data)

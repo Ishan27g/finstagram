@@ -12,7 +12,6 @@ func main() {
 
 	application := fiber.New()
 
-	// All valid api endpoints, route all /app to authentication middleware
 	app := application.Group("/api")
 	app.Use(cors.New())
 	routes.InitRoutes(app)
