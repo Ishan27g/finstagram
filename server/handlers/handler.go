@@ -63,7 +63,7 @@ func Login(c *fiber.Ctx) error {
 		return c.Send(respond(401,"Username can't be empty"))
 	}
 
-	// Insert into database
+	// Find match in database
 	user:= new(models.User)
 	collection := Client.Database("test").Collection("users")
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)

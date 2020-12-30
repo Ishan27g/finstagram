@@ -4,5 +4,6 @@ type User struct {
 	Id int
 	Username string
 	Password string
-	Value int
+	Posts[] Post
+	//Value int
 }

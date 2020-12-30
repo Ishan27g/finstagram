@@ -11,9 +11,9 @@
           dense
           size="22px"
           color="primary"
-          icon="eva-home"
+          icon="eva-corner-right-up-outline"
           class="desktop-screen"
-          to="/home"
+          to="/signup"
         />
         <q-separator vertical inset spaced class="desktop-screen"/>
         <q-btn
@@ -22,9 +22,9 @@
           dense
           size="22px"
           color="primary"
-          icon="eva-plus-square"
+          icon="eva-log-in-outline"
           class="desktop-screen"
-          to="/addImage"
+          to="/login"
         />
       </q-toolbar>
     </q-header>
@@ -39,8 +39,8 @@
         active-color="primary"
         indicator-color="transparent"
       >
-        <q-route-tab name="home" icon="eva-home" to="/home" />
-        <q-route-tab name="add" icon="eva-plus-square" to="/addImage" />
+        <q-route-tab name="home" icon="eva-corner-right-up-outline" to="/signup" />
+        <q-route-tab name="add" icon="eva-log-in-outline" to="/login" />
       </q-tabs>
     </q-footer>
   </q-layout>
@@ -48,7 +48,7 @@
 
 <script>
 export default {
-  name: "MainLayout",
+  name: "EntryLayout",
   data() {
     return {};
   },
