@@ -15,13 +15,6 @@ func respond(code int, msg string, msg2 interface{}) *models.HTTPResponse{
 	httpResponse.Code = code
 	httpResponse.Message = msg
 	httpResponse.Response = msg2
-	/*jsonResponse, err := json.Marshal(httpResponse)
-	if err != nil {
-		panic(err)
-	}
-	log.Print("Response is: ")
-	fmt.Println(jsonResponse)
-	log.Print("")*/
 	return httpResponse
 }
 func Signup(c *fiber.Ctx) error {

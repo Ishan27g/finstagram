@@ -5,7 +5,7 @@ type Post struct {
 	Caption string  `json:"Caption"`
 	ImageUrl string `json:"ImageUrl"`
 	Date string     `json:"Date"`
-	UserId uint32   `json:"UserId"`
+	Username string  `json:"UserName"`
 }
 
 

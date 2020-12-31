@@ -20,18 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="301786fd-5aab-4d35-824a-f4cc39d83628" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/handlers/userHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../finstagram/src/components/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../finstagram/src/components/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../finstagram/src/css/app.sass" beforeDir="false" afterPath="$PROJECT_DIR$/../finstagram/src/css/app.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finstagram/src/pages/AddImage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../finstagram/src/pages/AddImage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../finstagram/src/pages/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../finstagram/src/pages/HomePage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/PostHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/PostHandler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/database.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/database.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/handler.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/post.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/post.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,12 +53,15 @@
     <setting file="file://$PROJECT_DIR$/server.go" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1mNB5fIaeTIQ34zj61zC7Q57QzT" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -87,6 +86,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

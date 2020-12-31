@@ -11,6 +11,7 @@ func InitRoutes(app fiber.Router){
 	app.Post("/login", handlers.Login)
 
 	app.Get("/posts/:userId", handlers.GetPosts)
+	app.Get("/posts/:userId/:targetId", handlers.GetUserPosts)
 	app.Post("/posts/:userId", handlers.AddPosts)
 
 	app.Get("/users", handlers.GetUsers)
