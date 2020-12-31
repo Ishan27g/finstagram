@@ -14,6 +14,7 @@ func main() {
 
 	app := application.Group("/api")
 	app.Use(cors.New())
+	app.Use("/",routes.Auth)
 	routes.InitRoutes(app)
 
 	_ = application.Listen(":3000")

@@ -52,7 +52,6 @@ export default {
         this.$axios
           .post("http://localhost:3000/api/login", article)
           .then((response) => {
-            console.log(response.data);
             this.userId = response.data.Response;
             this.$router.push({ path: `/app/home/${this.userId}` });
           })

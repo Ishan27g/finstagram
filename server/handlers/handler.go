@@ -3,7 +3,6 @@ package handlers
 import (
 	`app/models`
 	`context`
-	`encoding/json`
 	`fmt`
 	`github.com/gofiber/fiber/v2`
 	`github.com/google/uuid`
@@ -11,22 +10,20 @@ import (
 	`log`
 	`time`
 )
-func respond(code int, msg string, msg2 interface{}) []byte{
+func respond(code int, msg string, msg2 interface{}) *models.HTTPResponse{
 	httpResponse := new(models.HTTPResponse)
 	httpResponse.Code = code
 	httpResponse.Message = msg
 	httpResponse.Response = msg2
-	jsonResponse, err := json.Marshal(httpResponse)
+	/*jsonResponse, err := json.Marshal(httpResponse)
 	if err != nil {
 		panic(err)
 	}
-	return jsonResponse
+	log.Print("Response is: ")
+	fmt.Println(jsonResponse)
+	log.Print("")*/
+	return httpResponse
 }
-
-func AppRoot(c *fiber.Ctx) error {
-	return c.SendString("Hello, World 👋!")
-}
-
 func Signup(c *fiber.Ctx) error {
 	user := new(models.User)
 	err := c.BodyParser(user)
@@ -34,30 +31,31 @@ func Signup(c *fiber.Ctx) error {
 		return err
 	}
 	if user.Username == "" {
-		return c.Send(respond(401,"Username can't be empty", nil))
+		return c.JSON(respond(401,"Username can't be empty", nil))
 	}
 	if user.Password == "" {
-		return c.Send(respond(401,"Username can't be empty", nil))
+		return c.JSON(respond(401,"Username can't be empty", nil))
 	}
 
 	var posts []int
 	uid := uuid.New().ID()
 	// Insert into database
 	collection := Client.Database("DB-1").Collection("users")
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 4*time.Second)
 	_, databaseErr := collection.InsertOne(ctx, bson.M{
-		"id": uid,
+		"userId": uid,
 		"password": user.Password,
 		"username": user.Username,
 		"email": user.Email,
 		"posts": posts,
+		"avatar": user.Avatar,
 	})
 	defer cancel()
 	if databaseErr != nil {
-		return c.Send(respond(500,"Database error", nil))
+		return c.JSON(respond(500,"Database error", nil))
 	}
 	fmt.Println("signed up")
-	return c.Send(respond(200,"Signed up", nil))
+	return c.JSON(respond(200,"Signed up", nil))
 }
 func Login(c *fiber.Ctx) error {
 	userReq := new(models.User)
@@ -66,17 +64,17 @@ func Login(c *fiber.Ctx) error {
 		return err
 	}
 	if userReq.Username == "" {
-		return c.Send(respond(401,"Username can't be empty", nil))
+		return c.JSON(respond(401,"Username can't be empty", nil))
 	}
 	if userReq.Password == "" {
-		return c.Send(respond(401,"Username can't be empty", nil))
+		return c.JSON(respond(401,"Username can't be empty", nil))
 	}
 
 	log.Print(userReq)
 	// Find match in database
 	user:= new(models.User)
 	collection := Client.Database("DB-1").Collection("users")
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 4*time.Second)
 	err = collection.FindOne(ctx, bson.M{
 		"username": userReq.Username,
 		"password": userReq.Password,
@@ -84,11 +82,11 @@ func Login(c *fiber.Ctx) error {
 	defer cancel()
 	if err != nil {
 		log.Println(err)
-		return c.Send(respond(401, "Not Found", nil))
+		return c.JSON(respond(401, "Not Found", nil))
 	}
-	if user == nil || err != nil{
-		return c.Send(respond(401,"Not Found", nil))
+	if user == nil {
+		return c.JSON(respond(401,"Not Found", nil))
 	} else {
-		return c.Send(respond(200,"Logged in", user.Id))
+		return c.JSON(respond(200,"Logged in", user.UserId))
 	}
 }
