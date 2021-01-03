@@ -36,11 +36,11 @@
               <q-item>
                 <q-item-section avatar>
                   <q-avatar>
-                    <img src="https://cdn.quasar.dev/img/avatar2.jpg" />
+                    <img :src="post.User.Avatar" />
                   </q-avatar>
                 </q-item-section>
                 <q-item-section>
-                  <q-item-label>Username</q-item-label>
+                  <q-item-label>{{ post.User.Username }}</q-item-label>
                   <q-item-label caption>{{ post.Date }}</q-item-label>
                 </q-item-section>
               </q-item>
@@ -147,6 +147,7 @@ export default {
     this.$axios
       .get(`http://localhost:3000/api/posts/${this.userId}`)
       .then((response) => {
+        console.log("get posts -> ", response.data.Response)
         this.posts = response.data.Response;
         this.isloading = false;
       })
@@ -158,6 +159,7 @@ export default {
     this.$axios
       .get(`http://localhost:3000/api/users`)
       .then((response) => {
+        console.log("get users -> ", response.data)
         this.users = response.data.Response;
         this.isloadingusers = false;
       })

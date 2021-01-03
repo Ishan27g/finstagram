@@ -3,6 +3,7 @@ package handlers
 import (
 	`app/models`
 	`context`
+	"fmt"
 	`github.com/gofiber/fiber/v2`
 	`github.com/google/uuid`
 	`go.mongodb.org/mongo-driver/bson`
@@ -46,8 +47,14 @@ func GetPosts(c *fiber.Ctx) error {
 
 func AddPosts(c *fiber.Ctx) error {
 	var userId = c.Params("userId")
+	id, err:= strconv.Atoi(userId)
+	fmt.Print(userId, id)
+	user:= getUser(id)
+	if user == nil {
+		return c.JSON(respond(401,"Error finding user", nil))
+	}
 	post := new(models.Post)
-	err := c.BodyParser(post)
+	err = c.BodyParser(post)
 	if err != nil{
 		return err
 	}
@@ -65,6 +72,7 @@ func AddPosts(c *fiber.Ctx) error {
 		"imageUrl": post.ImageUrl,
 		"date": current,
 		"userId":userid,
+		"user": user,
 	})
 	defer cancel()
 	if databaseErr != nil {

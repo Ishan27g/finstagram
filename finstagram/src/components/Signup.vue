@@ -28,6 +28,13 @@
         lazy-rules
         :rules="[(val) => (val && val.length > 0) || 'Please type something']"
       />
+      <q-input
+        filled
+        v-model="avatar"
+        label="Your Avatar url *"
+        lazy-rules
+        :rules="[(val) => (val && val.length > 0) || 'Please type something']"
+      />
 
       <div>
         <q-btn label="Submit" type="submit" color="primary" />
@@ -43,6 +50,7 @@ export default {
       username: "",
       email: "",
       password: "",
+      avatar: "",
     };
   },
   methods: {
@@ -58,6 +66,7 @@ export default {
           username: this.username,
           email: this.email,
           password: this.password,
+          avatar: this.avatar,
         };
         this.$axios
           .post("http://localhost:3000/api/signup", article)

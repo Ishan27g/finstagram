@@ -6,6 +6,7 @@ type Post struct {
 	ImageUrl string `json:"ImageUrl"`
 	Date string     `json:"Date"`
 	UserId uint32   `json:"UserId"`
+	User UserResponse   `json:"User"`
 }
 
 

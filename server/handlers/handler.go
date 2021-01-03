@@ -34,7 +34,10 @@ func Signup(c *fiber.Ctx) error {
 		return c.JSON(respond(401,"Username can't be empty", nil))
 	}
 	if user.Password == "" {
-		return c.JSON(respond(401,"Username can't be empty", nil))
+		return c.JSON(respond(401,"Password can't be empty", nil))
+	}
+	if user.Avatar == "" {
+		return c.JSON(respond(401,"Avatar can't be empty", nil))
 	}
 
 	var posts []int
