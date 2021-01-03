@@ -20,13 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="301786fd-5aab-4d35-824a-f4cc39d83628" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../finstagram/src/components/Signup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../finstagram/src/components/Signup.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/PostHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/PostHandler.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/database.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/database.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/userHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/userHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/post.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/post.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
