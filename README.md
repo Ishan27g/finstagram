@@ -25,14 +25,16 @@ cd server/
 go run server.go
 ```
 
-####Mobile 
 ![caption](https://media.giphy.com/media/8biE3Ur80n1piWVa0J/giphy.gif)
 ![caption](https://media.giphy.com/media/4Qx4f5Vh6BOPdzEpEQ/giphy.gif)
 
 <br />
 
-####Desktop 
 ![caption](https://media.giphy.com/media/YhmXCpu8FfLm9GA7KO/giphy.gif)
+
+<br />
+
+
 ![caption](https://media.giphy.com/media/fm4pRh4doeNbgBrfFQ/giphy.gif)
 
 Todo -
