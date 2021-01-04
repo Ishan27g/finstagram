@@ -19,6 +19,7 @@ npm install
 cd finstagram/
 quasar dev
 ```
+Update MongoDB connection details in server/handlers/database.go+70
 ### Start the Server
 ```bash
 cd server/
