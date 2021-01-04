@@ -11,14 +11,19 @@ The server connects to a MongoDB atlas cloud database.
 
 ## Install the dependencies
 ```bash
+cd finstagram/
 npm install
 ```
-
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+### Start the app in development mode
 ```bash
+cd finstagram/
 quasar dev
 ```
-
+### Start the Server
+```bash
+cd server/
+go run server.go
+```
 
 ####Login 
 <div>
