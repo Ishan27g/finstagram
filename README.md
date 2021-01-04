@@ -25,7 +25,7 @@ cd server/
 go run server.go
 ```
 
-![caption](https://giphy.com/embed/8biE3Ur80n1piWVa0J)
+![caption](https://media.giphy.com/media/8biE3Ur80n1piWVa0J/giphy.gif)
 
 ####Login 
 <div>
