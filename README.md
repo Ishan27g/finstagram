@@ -25,21 +25,15 @@ cd server/
 go run server.go
 ```
 
+####Mobile 
 ![caption](https://media.giphy.com/media/8biE3Ur80n1piWVa0J/giphy.gif)
+![caption](https://media.giphy.com/media/4Qx4f5Vh6BOPdzEpEQ/giphy.gif)
 
-####Login 
-<div>
-<iframe src="https://giphy.com/embed/8biE3Ur80n1piWVa0J" width="295" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-<iframe src="https://giphy.com/embed/4Qx4f5Vh6BOPdzEpEQ" width="338" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-</div>
 <br />
 
-<div>
-<iframe src="https://giphy.com/embed/YhmXCpu8FfLm9GA7KO" width="480" height="402" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-
-
-<iframe src="https://giphy.com/embed/fm4pRh4doeNbgBrfFQ" width="480" height="378" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-</div>
+####Desktop 
+![caption](https://media.giphy.com/media/YhmXCpu8FfLm9GA7KO/giphy.gif)
+![caption](https://media.giphy.com/media/fm4pRh4doeNbgBrfFQ/giphy.gif)
 
 Todo -
 
