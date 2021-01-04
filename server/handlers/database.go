@@ -67,7 +67,7 @@ func AddPostToDB(collectionPosts *mongo.Collection, post *models.Post, userid in
 func ConnectDatabase() {
 
 	//clientOptions := options.Client().ApplyURI("mongodb://localhost:27017")
-	clientOptions := options.Client().ApplyURI("mongodb+srv://goServer:gogo@cluster001.0xt0b.mongodb.net/<TestDB1>?retryWrites=true&w=majority")
+	clientOptions := options.Client().ApplyURI("mongodb+srv://<UPDATE-HERE>?retryWrites=true&w=majority")
 	client, err := mongo.Connect(context.TODO(), clientOptions)
 	Client = client
 	if err != nil {
