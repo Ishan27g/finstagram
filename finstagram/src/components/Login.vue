@@ -17,11 +17,13 @@
         lazy-rules
         :rules="[(val) => (val && val.length > 0) || 'Please type something']"
       />
-
       <div>
         <q-btn label="Submit" type="submit" color="primary" />
       </div>
     </q-form>
+    <div class="row justify-center">
+        <q-btn label="Go to signup page" to="/signup" color="secondary" />
+      </div>
   </q-page>
 </template>
 
@@ -36,7 +38,6 @@ export default {
   },
   methods: {
     handleSubmit() {
-
       // validate password
       const passwordError =
         this.password.length > 5
@@ -53,7 +54,12 @@ export default {
           .post("http://localhost:3000/api/login", article)
           .then((response) => {
             this.userId = response.data.Response;
-            this.$router.push({ path: `/app/home/${this.userId}` });
+            if(response.data.Code === 200){
+              this.$router.push({ path: `/app/home/${this.userId}` });
+            }
+            else{
+              this.$router.push({ path: '/signup' });  
+            }
           })
           .catch((error) => {
             this.errorMessage = error.message;

@@ -58,7 +58,7 @@
                     <q-btn
                       label="Add"
                       class="text-center"
-                      style="max-width: 10%; margin: auto"
+                      
                       @click="addImage()"
                     />
                   </div>

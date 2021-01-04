@@ -40,6 +40,9 @@
         <q-btn label="Submit" type="submit" color="primary" />
       </div>
     </q-form>
+      <div class="row justify-center">
+        <q-btn label="Go to login page" to="/" color="secondary" />
+      </div>
   </q-page>
 </template>
 
@@ -68,11 +71,13 @@ export default {
           password: this.password,
           avatar: this.avatar,
         };
+        console.log('what')
         this.$axios
           .post("http://localhost:3000/api/signup", article)
           .then((response) => {
             console.log(response.data)
             this.articleId = response.data.id;
+            this.$router.push('/')
           })
           .catch((error) => {
             this.errorMessage = error.message;

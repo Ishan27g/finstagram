@@ -49,6 +49,9 @@ func GetUserPosts(c *fiber.Ctx) error {
 
 func AddPosts(c *fiber.Ctx) error {
 	var userId = c.Params("userId")
+	if userId == "" {
+		return c.JSON(respond(401,"user's Id can't be empty", nil))
+	}
 	id, err:= strconv.Atoi(userId)
 	user:= getUser(id)
 	if user == nil {
@@ -59,12 +62,8 @@ func AddPosts(c *fiber.Ctx) error {
 	if err != nil{
 		return err
 	}
-	if userId == "" {
-		return c.JSON(respond(401,"user's Id can't be empty", nil))
-	}
-
 	collectionPosts := Client.Database("DB-1").Collection("posts")
-	databaseErr := AddPostToDB(collectionPosts, post, userId, user)
+	databaseErr := AddPostToDB(collectionPosts, post, id, user)
 	if databaseErr != nil {
 		return c.JSON(respond(500,"Database error", nil))
 	}

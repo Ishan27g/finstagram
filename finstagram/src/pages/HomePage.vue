@@ -30,7 +30,7 @@
     </q-header>
     <q-page class="q-pa-md home">
       <template v-if="!isloading">
-        <div class="row justify-around q-col-gutter-xl">
+        <div class="row justify-around q-gutter-y-lg q-col-gutter-xl">
           <div class="col-12 col-md-8">
             <q-card class="posts" v-for="post in posts" :key="post.Id">
               <q-item>
@@ -44,7 +44,7 @@
                   <q-item-label caption>{{ post.Date }}</q-item-label>
                 </q-item-section>
               </q-item>
-              <q-img :src="post.ImageUrl" class="images full-width" />
+              <q-img :src="post.ImageUrl" class="images full-width"/>
               <q-item>
                 <q-item-section>
                   <q-item-label>{{ post.Caption }}</q-item-label>
@@ -52,8 +52,9 @@
               </q-item>
             </q-card>
           </div>
-          <div class="desktop-screen col-md-4">
+          <div class="desktop-screen col-md-3">
             <q-card bordered class="fixed">
+              <div class="text-h5 text-center">Users</div>
               <q-card-section
                 horizontal
                 v-for="user in users"
@@ -68,8 +69,6 @@
                     </q-item-section>
                     <q-item-section>
                       <q-item-label>{{ user.Username }}</q-item-label>
-                      <q-item-label caption>Last post at</q-item-label>
-                      <q-item-label caption>31 Dec 20 01:52 AEST</q-item-label>
                     </q-item-section>
                   </q-item>
                 </q-card-section>

@@ -44,7 +44,7 @@ func FindPostsInDB(collectionPosts *mongo.Collection, filter bson.D ) (*[]models
 	return posts, nil
 }
 
-func AddPostToDB(collectionPosts *mongo.Collection, post *models.Post, userid string, user *models.UserResponse) error {
+func AddPostToDB(collectionPosts *mongo.Collection, post *models.Post, userid int, user *models.UserResponse) error {
 	ctx, cancel := context.WithTimeout(context.Background(), 4*time.Second)
 	defer cancel()
 	uid := uuid.New().ID()
