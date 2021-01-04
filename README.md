@@ -2,7 +2,7 @@
 
 #### A full stack minimal Instagram clone:
 ##### - Frontend / User-interface written in Vue.js
-#####- Backend / Server written in Golang
+##### - Backend / Server written in Golang
 
 The app allows registration, login as well as certain CRUD capabilities. 
 Quasar framework is used for the frontend components. 
